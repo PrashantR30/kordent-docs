@@ -8,6 +8,10 @@
   --md-footer-bg-color:         #3d90ce;
 }
 
+.md-header {
+  background-color: #000;
+}
+
 .md-version__list {
   overflow: auto;
 }
