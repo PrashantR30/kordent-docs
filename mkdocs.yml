@@ -15,8 +15,8 @@ theme:
   language: "en"
   custom_dir: docs/custom_theme
   
-  favicon: img/k0rdent-logo-mark-inverted.svg
-  logo: img/k0rdent-logo-mark-inverted.svg
+  favicon: img/k0rdent-logo-horizontal-inverted.svg
+  logo: img/k0rdent-logo-horizontal-inverted.svg
 
   palette:
     - scheme: default
