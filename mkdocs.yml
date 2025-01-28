@@ -1,0 +1,119 @@
+site_name: Documentation
+site_description: Documentation for k0rdent.
+site_author: Mirantis, Inc.
+
+docs_dir: docs/
+repo_name: GitHub
+repo_url: https://github.com/k0rdent/kcm
+
+copyright:
+  Copyright &copy; 2025 The k0rdent authors | Documentation distributed under <a href="https://creativecommons.org/licenses/by/4.0/legalcode.txt">CC-BY-4.0</a>.
+
+theme:
+  name: "material"
+  highlightjs: true
+  language: "en"
+  custom_dir: docs/custom_theme
+  
+  favicon: img/k0rdent-logo-mark-inverted.svg
+  logo: img/k0rdent-logo-mark-inverted.svg
+
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+    - scheme: slate
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+  features:
+    - toc.autohide
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+
+extra_css:
+  - stylesheets/extra.css
+plugins:
+  - search
+
+nav:
+  - Welcome to the k0rdent docs: index.md
+  - k0rdent concepts:
+    - Why k0rdent?: why-k0rdent.md
+    - k0rdent architecture: k0rdent-architecture.md
+  - QuickStarts:
+    - Guide to Quickstarts: guide-to-quickstarts.md
+    - Set up Management Node and Cluster: quickstart-1-mgmt-node-and-cluster.md
+    - Configure and Deploy to AWS: quickstart-2-aws.md
+    - Configure and Deploy to Azure: quickstart-2-azure.md
+  - Administrator Guide:
+    - Before you start: admin-before.md
+    - Installing k0rdent: admin-installation.md
+    - Prepare k0rdent to create managed clusters on multiple providers: admin-prepare.md
+    - Creating standalone clusters: admin-creating-clusters.md
+    - Adopting clusters: admin-adopting-clusters.md
+    - Hosted control planes: admin-hosted-control-planes.md
+    - Using and creating service templates: admin-service-templates.md
+    - Upgrading k0rdent: admin-upgrading-k0rdent.md
+    - k0rdent credentials management: admin-credentials.md
+    - k0rdent Role Based Access Control (RBAC): admin-rbac.md
+    - k0rdent Observability and FinOps (KOF): admin-kof.md
+    - Backing up k0rdent: admin-backup.md
+  - User Guide:
+    - Creating clusters as a k0rdent user: user-create-cluster.md
+    - Creating and adding services to clusters as a k0rdent user: use-create-service.md
+  - k0rdent Templates Reference:
+    - Introduction to k0rdent templates: template-intro.md
+    - Using predefined templates: template-predefined.md
+    - Bring-your-own (BYO) templates: template-byo.md
+    - Templates for Amazon Web Services: template-aws.md
+    - Templates for Azure: template-azure.md
+    - Templates for OpenStack: template-openstack.md
+    - Templates for vSphere: template-vsphere.md
+  - Reference:
+    - Glossary: glossary.md
+  - Appendix:
+    - Air-gapped installation: appendix-airgap.md
+    - Extended management configuration: appendix-extend-mgmt.md
+    - Understanding the dry run: appendix-dryrun.md
+
+markdown_extensions:
+  - pymdownx.highlight: {}
+  - pymdownx.superfences: {}
+  - pymdownx.inlinehilite: {}
+  - toc:
+      permalink: "#"
+      toc_depth: 3
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - admonition
+  - def_list
+
+extra:
+  k8s_version: !!python/object/apply:os.getenv ["KUBERNETES_VERSION"]
+  generator: false
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/k0rdent/kcm
+      name: k0rdent on GitHub
+    - icon: fontawesome/brands/x-twitter
+      link: https://x.com/k0rdent
+      name: k0rdent on X
+    - icon: fontawesome/brands/bluesky
+      link: https://bsky.app/profile/k0rdent.bsky.social
+      name: k0rdent on BlueSky
+    - icon: fontawesome/brands/youtube
+      link: https://www.youtube.com/channel/UChXQ6kbvjnAtdZAQpl7Fo4A
+      name: k0rdent on YouTube
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/company/k0rdent/
+      name: k0rdent on LinkedIn
+
+  version:
+    provider: mike
+    default: stable
