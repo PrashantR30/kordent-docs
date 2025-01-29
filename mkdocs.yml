@@ -95,7 +95,6 @@ markdown_extensions:
   - def_list
 
 extra:
-  k8s_version: !!python/object/apply:os.getenv ["KUBERNETES_VERSION"]
   generator: false
   social:
     - icon: fontawesome/brands/github
