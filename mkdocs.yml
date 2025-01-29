@@ -35,8 +35,23 @@ theme:
 
 extra_css:
   - stylesheets/extra.css
+
 plugins:
   - search
+  - ezglossary:
+      section_config:
+        - name: demo
+          inline_refs: short
+  - macros:
+      j2_variable_start_string: "{{{"
+      j2_variable_end_string: "}}}"
+  - exclude:
+      glob:
+        - "*.etag"
+        - Dockerfile.serve-dev
+        - Makefile*
+        - requirements_pip.txt
+        - requirements.txt
 
 nav:
   - Welcome to the k0rdent docs: index.md
@@ -83,6 +98,9 @@ markdown_extensions:
   - pymdownx.highlight: {}
   - pymdownx.superfences: {}
   - pymdownx.inlinehilite: {}
+  - mdx_truly_sane_lists: # https://github.com/mkdocs/mkdocs/issues/545#issuecomment-522196661
+      nested_indent: 2
+      truly_sane: true
   - toc:
       permalink: "#"
       toc_depth: 3
