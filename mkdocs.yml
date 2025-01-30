@@ -14,10 +14,10 @@ theme:
   highlightjs: true
   language: "en"
   custom_dir: docs/custom_theme
-  
+
   favicon: img/favicon-32x32.png
   logo: img/k0rdent-logo-horizontal-inverted.svg
-
+  
   palette:
     - scheme: default
       toggle:
@@ -38,20 +38,9 @@ extra_css:
 
 plugins:
   - search
-  - ezglossary:
-      section_config:
-        - name: demo
-          inline_refs: short
-  - macros:
-      j2_variable_start_string: "{{{"
-      j2_variable_end_string: "}}}"
-  - exclude:
-      glob:
-        - "*.etag"
-        - Dockerfile.serve-dev
-        - Makefile*
-        - requirements_pip.txt
-        - requirements.txt
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
 
 nav:
   - Welcome to the k0rdent docs: index.md
@@ -78,7 +67,7 @@ nav:
     - Backing up k0rdent: admin-backup.md
   - User Guide:
     - Creating clusters as a k0rdent user: user-create-cluster.md
-    - Creating and adding services to clusters as a k0rdent user: use-create-service.md
+    - Creating and adding services to clusters as a k0rdent user: user-create-service.md
   - k0rdent Templates Reference:
     - Introduction to k0rdent templates: template-intro.md
     - Using predefined templates: template-predefined.md
@@ -95,20 +84,11 @@ nav:
     - Understanding the dry run: appendix-dryrun.md
 
 markdown_extensions:
-  - callouts
   - tables
   - pymdownx.details
   - pymdownx.highlight: {}
   - pymdownx.superfences: {}
   - pymdownx.inlinehilite: {}
-  - pymdownx.superfences:
-      custom_fences:
-        - name: mermaid
-          class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_code_format
-  - mdx_truly_sane_lists: # https://github.com/mkdocs/mkdocs/issues/545#issuecomment-522196661
-      nested_indent: 2
-      truly_sane: true
   - toc:
       permalink: "#"
       toc_depth: 3
@@ -132,7 +112,6 @@ extra:
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/company/k0rdent/
       name: k0rdent on LinkedIn
-
   version:
     provider: mike
     default: stable
